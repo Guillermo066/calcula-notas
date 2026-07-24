@@ -89,3 +89,26 @@ function calcularNota() {
     "correcto"
   );
 }
+function calcularMedia() {
+    const notas = [];
+
+    for (let i = 1; i <= 5; i++) {
+        const campo = document.getElementById("n" + i);
+
+        if (campo && campo.value !== "") {
+            notas.push(Number(campo.value));
+        }
+    }
+
+    if (notas.length === 0) {
+        document.getElementById("resultado").textContent =
+            "Introduce al menos una nota.";
+        return;
+    }
+
+    const suma = notas.reduce((a, b) => a + b, 0);
+    const media = suma / notas.length;
+
+    document.getElementById("resultado").textContent =
+        "Tu nota media es: " + media.toFixed(2);
+}
