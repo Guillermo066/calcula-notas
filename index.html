@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculadora de nota necesaria para aprobar</title>
+
+  <meta
+    name="description"
+    content="Calcula qué nota necesitas sacar en el próximo examen para aprobar una asignatura."
+  >
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="contenedor">
+      <h1>CalculaNotas</h1>
+      <p>Descubre qué nota necesitas para aprobar</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="introduccion">
+      <h2>Calculadora de nota necesaria</h2>
+
+      <p>
+        Introduce tu nota actual, cuánto vale el examen final y la nota que
+        quieres conseguir.
+      </p>
+    </section>
+
+    <section class="calculadora">
+
+      <label for="notaActual">Nota actual</label>
+      <input
+        type="number"
+        id="notaActual"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder="Ejemplo: 6"
+      >
+
+      <label for="pesoActual">Porcentaje ya evaluado</label>
+      <input
+        type="number"
+        id="pesoActual"
+        min="0"
+        max="100"
+        step="1"
+        placeholder="Ejemplo: 60"
+      >
+
+      <label for="pesoExamen">Porcentaje del próximo examen</label>
+      <input
+        type="number"
+        id="pesoExamen"
+        min="0"
+        max="100"
+        step="1"
+        placeholder="Ejemplo: 40"
+      >
+
+      <label for="notaDeseada">Nota final que quieres conseguir</label>
+      <input
+        type="number"
+        id="notaDeseada"
+        min="0"
+        max="10"
+        step="0.01"
+        value="5"
+      >
+
+      <button id="botonCalcular">
+        Calcular nota necesaria
+      </button>
+
+      <div id="resultado" class="resultado"></div>
+
+    </section>
+
+    <section class="explicacion">
+      <h2>Ejemplo</h2>
+
+      <p>
+        Si tienes un 6 en el 60 % de la asignatura y el examen final vale un
+        40 %, necesitarías sacar un 3,50 para terminar con un 5.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 CalculaNotas</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Calculadora de nota necesaria para aprobar</title>
+
+  <meta
+    name="description"
+    content="Calcula qué nota necesitas sacar en el próximo examen para aprobar una asignatura."
+  >
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="contenedor">
+      <h1>CalculaNotas</h1>
+      <p>Descubre qué nota necesitas para aprobar</p>
+    </div>
+  </header>
+
+  <main class="contenedor">
+
+    <section class="introduccion">
+      <h2>Calculadora de nota necesaria</h2>
+
+      <p>
+        Introduce tu nota actual, cuánto vale el examen final y la nota que
+        quieres conseguir.
+      </p>
+    </section>
+
+    <section class="calculadora">
+
+      <label for="notaActual">Nota actual</label>
+      <input
+        type="number"
+        id="notaActual"
+        min="0"
+        max="10"
+        step="0.01"
+        placeholder="Ejemplo: 6"
+      >
+
+      <label for="pesoActual">Porcentaje ya evaluado</label>
+      <input
+        type="number"
+        id="pesoActual"
+        min="0"
+        max="100"
+        step="1"
+        placeholder="Ejemplo: 60"
+      >
+
+      <label for="pesoExamen">Porcentaje del próximo examen</label>
+      <input
+        type="number"
+        id="pesoExamen"
+        min="0"
+        max="100"
+        step="1"
+        placeholder="Ejemplo: 40"
+      >
+
+      <label for="notaDeseada">Nota final que quieres conseguir</label>
+      <input
+        type="number"
+        id="notaDeseada"
+        min="0"
+        max="10"
+        step="0.01"
+        value="5"
+      >
+
+      <button id="botonCalcular">
+        Calcular nota necesaria
+      </button>
+
+      <div id="resultado" class="resultado"></div>
+
+    </section>
+
+    <section class="explicacion">
+      <h2>Ejemplo</h2>
+
+      <p>
+        Si tienes un 6 en el 60 % de la asignatura y el examen final vale un
+        40 %, necesitarías sacar un 3,50 para terminar con un 5.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 CalculaNotas</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
