@@ -114,3 +114,25 @@ function calcularMedia() {
     document.getElementById("resultado").textContent =
         "Tu nota media es: " + media.toFixed(2);
 }
+const elementosAnimados = document.querySelectorAll(
+  ".tarjeta-calculadora, .ventaja, .paso, .lista-preguntas details"
+);
+
+const observador = new IntersectionObserver(
+  (entradas) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("visible");
+        observador.unobserve(entrada.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  }
+);
+
+elementosAnimados.forEach((elemento) => {
+  elemento.classList.add("animar-scroll");
+  observador.observe(elemento);
+});
