@@ -46,31 +46,33 @@
 </main>
 
 <script>
+function calcularMedia() {
+    const notas = [];
 
-function calcularMedia(){
+    ["n1", "n2", "n3", "n4"].forEach(function(id) {
+        const campo = document.getElementById(id);
+        const valor = Number(campo.value);
 
-    const notas=[];
-
-    ["n1","n2","n3","n4"].forEach(id=>{
-        const valor=parseFloat(document.getElementById(id).value);
-        if(!isNaN(valor)){
+        if (!isNaN(valor)) {
             notas.push(valor);
         }
     });
 
-    if(notas.length===0){
-        document.getElementById("resultado").innerHTML="Introduce al menos una nota.";
+    if (notas.length === 0) {
+        document.getElementById("resultado").textContent =
+            "Introduce al menos una nota.";
         return;
     }
 
-    const media=notas.reduce((a,b)=>a+b,0)/notas.length;
+    const suma = notas.reduce(function(total, nota) {
+        return total + nota;
+    }, 0);
 
-    document.getElementById("resultado").innerHTML=
-        "<h2>Tu nota media es: "+media.toFixed(2)+"</h2>";
+    const media = suma / notas.length;
 
+    document.getElementById("resultado").textContent =
+        "Tu nota media es: " + media.toFixed(2);
 }
-
 </script>
-
 </body>
 </html>
