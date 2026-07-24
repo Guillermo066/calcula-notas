@@ -2,214 +2,683 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="d8ybDkPnL6du8reemAe53aLHDd1YRtS3vPBrsqdyTA0" />
 
-  <title>Calculadora de nota necesaria para aprobar</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="google-site-verification"
+    content="d8ybDkPnL6du8reemAe53aLHDd1YRtS3vPBrsqdyTA0"
+  >
+
+  <title>Calculadoras de notas para estudiantes | CalculaNotas</title>
 
   <meta
     name="description"
-    content="Calcula qué nota necesitas sacar en el próximo examen para aprobar una asignatura."
+    content="Calcula la nota que necesitas para aprobar, tu nota media y tu media ponderada de forma rápida, gratuita y sin registrarte."
   >
 
   <link rel="stylesheet" href="estilos.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 
 <body>
 
-  <header>
-  
-    <div class="contenedor">
-      <nav class="menu">
-    <a href="index.html">Calculadora nota necesaria</a>
-    <a href="calculadora-nota-media.html">Calculadora nota media</a>
-    <a href="calculadora-media-ponderada.html">Calculadora media ponderada</a>
-</nav>
-      <h1>CalculaNotas</h1>
-      <p>Descubre qué nota necesitas para aprobar</p>
+  <header class="cabecera">
+    <div class="contenedor barra-navegacion">
+
+      <a href="index.html" class="logo" aria-label="Ir a la página de inicio">
+
+        <span class="logo-icono" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+            <path d="M8 8h8"></path>
+            <path d="M8 12h3"></path>
+            <path d="M8 16h3"></path>
+            <path d="M15 12v4"></path>
+            <path d="M13 14h4"></path>
+          </svg>
+        </span>
+
+        <span>CalculaNotas</span>
+      </a>
+
+      <nav class="menu" aria-label="Navegación principal">
+
+        <a href="index.html">Inicio</a>
+
+        <a href="#calculadoras">Calculadoras</a>
+
+        <a href="#ventajas">Ventajas</a>
+
+        <a href="#preguntas">Preguntas frecuentes</a>
+
+      </nav>
+
+      <a
+        href="calculadora-nota-necesaria.html"
+        class="boton-cabecera"
+      >
+        Empezar
+      </a>
+
     </div>
   </header>
 
-  <main class="contenedor">
+  <main>
 
-    <section class="introduccion">
-      <h2>Calculadora de nota necesaria</h2>
+    <section class="hero">
 
-      <p>
-        Introduce tu nota actual, cuánto vale el examen final y la nota que
-        quieres conseguir.
-      </p>
+      <div class="decoracion decoracion-uno"></div>
+      <div class="decoracion decoracion-dos"></div>
+
+      <div class="contenedor hero-contenido">
+
+        <div class="hero-texto">
+
+          <span class="etiqueta">
+            Herramientas gratuitas para estudiantes
+          </span>
+
+          <h1>
+            Calcula cualquier nota en segundos
+          </h1>
+
+          <p class="hero-descripcion">
+            Descubre qué nota necesitas para aprobar, calcula tu media
+            o consigue tu media ponderada de forma sencilla y sin registrarte.
+          </p>
+
+          <div class="hero-botones">
+
+            <a
+              href="calculadora-nota-necesaria.html"
+              class="boton boton-principal"
+            >
+              Empezar gratis
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <a
+              href="#calculadoras"
+              class="boton boton-secundario"
+            >
+              Ver calculadoras
+            </a>
+
+          </div>
+
+          <div class="hero-datos">
+
+            <div class="dato">
+              <strong>100 %</strong>
+              <span>Gratis</span>
+            </div>
+
+            <div class="dato">
+              <strong>Sin registro</strong>
+              <span>No pedimos datos</span>
+            </div>
+
+            <div class="dato">
+              <strong>Resultado inmediato</strong>
+              <span>En pocos segundos</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+
+          <div class="tarjeta-flotante tarjeta-flotante-uno">
+            <span>Nota media</span>
+            <strong>8,1</strong>
+          </div>
+
+          <div class="tarjeta-flotante tarjeta-flotante-dos">
+            <span>Objetivo</span>
+            <strong>Aprobado</strong>
+          </div>
+
+          <div class="panel-principal">
+
+            <div class="panel-cabecera">
+              <div>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              <p>Resumen académico</p>
+            </div>
+
+            <div class="resultado-principal">
+              <span>Nota final estimada</span>
+              <strong>7,4</strong>
+
+              <div class="barra-resultado">
+                <div></div>
+              </div>
+            </div>
+
+            <div class="resumen-datos">
+
+              <div>
+                <span>Nota actual</span>
+                <strong>6,5</strong>
+              </div>
+
+              <div>
+                <span>Próximo examen</span>
+                <strong>40 %</strong>
+              </div>
+
+            </div>
+
+            <div class="grafico">
+
+              <div style="height: 38%"></div>
+              <div style="height: 55%"></div>
+              <div style="height: 48%"></div>
+              <div style="height: 72%"></div>
+              <div style="height: 63%"></div>
+              <div style="height: 88%"></div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
     </section>
 
-    <section class="calculadora">
+    <section
+      id="calculadoras"
+      class="seccion seccion-calculadoras"
+    >
 
-      <label for="notaActual">Nota actual</label>
-      <input
-        type="number"
-        id="notaActual"
-        min="0"
-        max="10"
-        step="0.01"
-        placeholder="Ejemplo: 6"
-      >
+      <div class="contenedor">
 
-      <label for="pesoActual">Porcentaje ya evaluado</label>
-      <input
-        type="number"
-        id="pesoActual"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="Ejemplo: 60"
-      >
+        <div class="cabecera-seccion">
 
-      <label for="pesoExamen">Porcentaje del próximo examen</label>
-      <input
-        type="number"
-        id="pesoExamen"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="Ejemplo: 40"
-      >
+          <div>
+            <span class="subtitulo-seccion">
+              Nuestras calculadoras
+            </span>
 
-      <label for="notaDeseada">Nota final que quieres conseguir</label>
-      <input
-        type="number"
-        id="notaDeseada"
-        min="0"
-        max="10"
-        step="0.01"
-        value="5"
-      >
+            <h2>
+              Elige la herramienta que necesitas
+            </h2>
+          </div>
 
-      <button id="botonCalcular">
-        Calcular nota necesaria
-      </button>
+          <p>
+            Calculadoras sencillas, rápidas y pensadas para resolver
+            las dudas más habituales de cualquier estudiante.
+          </p>
 
-      <div id="resultado" class="resultado"></div>
+        </div>
 
+        <div class="rejilla-calculadoras">
+
+          <article class="tarjeta-calculadora">
+
+            <div class="icono-calculadora">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+            </div>
+
+            <span class="numero-tarjeta">01</span>
+
+            <h3>Nota necesaria</h3>
+
+            <p>
+              Calcula qué nota necesitas sacar en el próximo examen
+              para aprobar o alcanzar tu objetivo.
+            </p>
+
+            <a href="calculadora-nota-necesaria.html">
+              Abrir calculadora
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+          <article class="tarjeta-calculadora destacada">
+
+            <div class="icono-calculadora">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19V10"></path>
+                <path d="M10 19V5"></path>
+                <path d="M16 19v-7"></path>
+                <path d="M22 19H2"></path>
+              </svg>
+            </div>
+
+            <span class="numero-tarjeta">02</span>
+
+            <h3>Nota media</h3>
+
+            <p>
+              Introduce tus notas y obtén la media de todas tus
+              asignaturas de forma inmediata.
+            </p>
+
+            <a href="calculadora-nota-media.html">
+              Abrir calculadora
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+          <article class="tarjeta-calculadora">
+
+            <div class="icono-calculadora">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 7h14"></path>
+                <path d="M8 4v6"></path>
+                <path d="M16 14v6"></path>
+                <path d="M5 17h14"></path>
+              </svg>
+            </div>
+
+            <span class="numero-tarjeta">03</span>
+
+            <h3>Media ponderada</h3>
+
+            <p>
+              Calcula tu nota final teniendo en cuenta el porcentaje
+              de cada examen, trabajo o actividad.
+            </p>
+
+            <a href="calculadora-media-ponderada.html">
+              Abrir calculadora
+              <span aria-hidden="true">→</span>
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
     </section>
 
-    <section class="explicacion">
-      <h2>Ejemplo</h2>
+    <section
+      id="ventajas"
+      class="seccion seccion-ventajas"
+    >
 
-      <p>
-        Si tienes un 6 en el 60 % de la asignatura y el examen final vale un
-        40 %, necesitarías sacar un 3,50 para terminar con un 5.
-      </p>
+      <div class="contenedor">
+
+        <div class="titulo-centrado">
+
+          <span class="subtitulo-seccion">
+            Por qué usar CalculaNotas
+          </span>
+
+          <h2>
+            Todo lo necesario, sin complicaciones
+          </h2>
+
+          <p>
+            Hemos diseñado CalculaNotas para que puedas obtener
+            respuestas claras sin perder tiempo.
+          </p>
+
+        </div>
+
+        <div class="rejilla-ventajas">
+
+          <article class="ventaja">
+
+            <div class="icono-ventaja">
+              <svg viewBox="0 0 24 24">
+                <path d="M13 2L4 14h7l-1 8 9-12h-7z"></path>
+              </svg>
+            </div>
+
+            <h3>Resultados inmediatos</h3>
+
+            <p>
+              Obtén tus cálculos en segundos, sin pasos innecesarios.
+            </p>
+
+          </article>
+
+          <article class="ventaja">
+
+            <div class="icono-ventaja">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M9 12l2 2 4-5"></path>
+              </svg>
+            </div>
+
+            <h3>Fácil de entender</h3>
+
+            <p>
+              Resultados claros, explicaciones sencillas y ejemplos útiles.
+            </p>
+
+          </article>
+
+          <article class="ventaja">
+
+            <div class="icono-ventaja">
+              <svg viewBox="0 0 24 24">
+                <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+                <path d="M10 18h4"></path>
+              </svg>
+            </div>
+
+            <h3>Adaptada a móvil</h3>
+
+            <p>
+              Úsala cómodamente desde el móvil, la tablet o el ordenador.
+            </p>
+
+          </article>
+
+          <article class="ventaja">
+
+            <div class="icono-ventaja">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7z"></path>
+                <path d="M9 12l2 2 4-5"></path>
+              </svg>
+            </div>
+
+            <h3>Sin datos personales</h3>
+
+            <p>
+              No necesitas registrarte ni introducir información personal.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="seccion seccion-como-funciona">
+
+      <div class="contenedor como-funciona">
+
+        <div class="como-funciona-texto">
+
+          <span class="subtitulo-seccion">
+            Cómo funciona
+          </span>
+
+          <h2>
+            Tu resultado en tres pasos
+          </h2>
+
+          <p>
+            No necesitas fórmulas complicadas. Solo introduce tus datos
+            y deja que CalculaNotas haga el cálculo.
+          </p>
+
+          <a
+            href="calculadora-nota-necesaria.html"
+            class="enlace-destacado"
+          >
+            Probar una calculadora
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+        <div class="pasos">
+
+          <article class="paso">
+            <span>1</span>
+
+            <div>
+              <h3>Elige una calculadora</h3>
+
+              <p>
+                Selecciona la herramienta que mejor se adapte a lo que necesitas.
+              </p>
+            </div>
+          </article>
+
+          <article class="paso">
+            <span>2</span>
+
+            <div>
+              <h3>Introduce tus notas</h3>
+
+              <p>
+                Añade tus notas, porcentajes o la nota final que quieres alcanzar.
+              </p>
+            </div>
+          </article>
+
+          <article class="paso">
+            <span>3</span>
+
+            <div>
+              <h3>Consulta el resultado</h3>
+
+              <p>
+                Obtén una respuesta inmediata y fácil de entender.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section
+      id="preguntas"
+      class="seccion seccion-preguntas"
+    >
+
+      <div class="contenedor preguntas-contenido">
+
+        <div class="preguntas-introduccion">
+
+          <span class="subtitulo-seccion">
+            Preguntas frecuentes
+          </span>
+
+          <h2>
+            Resolvemos tus dudas
+          </h2>
+
+          <p>
+            Aquí tienes las respuestas a las preguntas más habituales
+            sobre nuestras calculadoras.
+          </p>
+
+        </div>
+
+        <div class="lista-preguntas">
+
+          <details>
+            <summary>
+              ¿Las calculadoras son gratuitas?
+            </summary>
+
+            <p>
+              Sí. Todas las herramientas de CalculaNotas son gratuitas
+              y pueden utilizarse sin crear una cuenta.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              ¿Puedo utilizar la web desde el móvil?
+            </summary>
+
+            <p>
+              Sí. CalculaNotas está preparada para funcionar correctamente
+              desde móviles, tabletas y ordenadores.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              ¿Cómo se calcula una media ponderada?
+            </summary>
+
+            <p>
+              Cada nota se multiplica por el porcentaje que representa.
+              Después se suman todos los resultados para obtener la nota final.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              ¿Puedo saber qué nota necesito para aprobar?
+            </summary>
+
+            <p>
+              Sí. Introduce tu nota actual, el porcentaje ya evaluado,
+              el peso del próximo examen y la nota final que quieres conseguir.
+            </p>
+          </details>
+
+          <details>
+            <summary>
+              ¿Guardáis mis notas?
+            </summary>
+
+            <p>
+              No. Los cálculos se realizan directamente en tu navegador
+              y no necesitas introducir datos personales.
+            </p>
+          </details>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="llamada-final">
+
+      <div class="contenedor llamada-final-contenido">
+
+        <div>
+
+          <span>
+            Empieza ahora
+          </span>
+
+          <h2>
+            Calcula tu nota sin complicaciones
+          </h2>
+
+          <p>
+            Elige una calculadora y obtén tu resultado en pocos segundos.
+          </p>
+
+        </div>
+
+        <a
+          href="calculadora-nota-necesaria.html"
+          class="boton boton-claro"
+        >
+          Empezar gratis
+          <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
     </section>
 
   </main>
 
-  <footer>
-    <p>© 2026 CalculaNotas</p>
-  </footer>
+  <footer class="pie">
 
-  <script src="script.js"></script>
+    <div class="contenedor pie-superior">
 
-</body>
-</html><!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <div class="pie-marca">
 
-  <title>Calculadora de nota necesaria para aprobar</title>
+        <a href="index.html" class="logo logo-pie">
 
-  <meta
-    name="description"
-    content="Calcula qué nota necesitas sacar en el próximo examen para aprobar una asignatura."
-  >
+          <span class="logo-icono" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+              <path d="M8 8h8"></path>
+              <path d="M8 12h3"></path>
+              <path d="M8 16h3"></path>
+              <path d="M15 12v4"></path>
+              <path d="M13 14h4"></path>
+            </svg>
+          </span>
 
-  <link rel="stylesheet" href="estilos.css">
-</head>
+          <span>CalculaNotas</span>
+        </a>
 
-<body>
+        <p>
+          Herramientas rápidas y gratuitas para estudiantes.
+        </p>
 
-  <header>
-    <div class="contenedor">
-      <h1>CalculaNotas</h1>
-      <p>Descubre qué nota necesitas para aprobar</p>
+      </div>
+
+      <div class="pie-enlaces">
+
+        <div>
+          <h3>Calculadoras</h3>
+
+          <a href="calculadora-nota-necesaria.html">
+            Nota necesaria
+          </a>
+
+          <a href="calculadora-nota-media.html">
+            Nota media
+          </a>
+
+          <a href="calculadora-media-ponderada.html">
+            Media ponderada
+          </a>
+        </div>
+
+        <div>
+          <h3>Información</h3>
+
+          <a href="#ventajas">
+            Ventajas
+          </a>
+
+          <a href="#preguntas">
+            Preguntas frecuentes
+          </a>
+
+          <a href="index.html">
+            Inicio
+          </a>
+        </div>
+
+      </div>
+
     </div>
-  </header>
 
-  <main class="contenedor">
-
-    <section class="introduccion">
-      <h2>Calculadora de nota necesaria</h2>
+    <div class="contenedor pie-inferior">
 
       <p>
-        Introduce tu nota actual, cuánto vale el examen final y la nota que
-        quieres conseguir.
+        © 2026 CalculaNotas. Todos los derechos reservados.
       </p>
-    </section>
-
-    <section class="calculadora">
-
-      <label for="notaActual">Nota actual</label>
-      <input
-        type="number"
-        id="notaActual"
-        min="0"
-        max="10"
-        step="0.01"
-        placeholder="Ejemplo: 6"
-      >
-
-      <label for="pesoActual">Porcentaje ya evaluado</label>
-      <input
-        type="number"
-        id="pesoActual"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="Ejemplo: 60"
-      >
-
-      <label for="pesoExamen">Porcentaje del próximo examen</label>
-      <input
-        type="number"
-        id="pesoExamen"
-        min="0"
-        max="100"
-        step="1"
-        placeholder="Ejemplo: 40"
-      >
-
-      <label for="notaDeseada">Nota final que quieres conseguir</label>
-      <input
-        type="number"
-        id="notaDeseada"
-        min="0"
-        max="10"
-        step="0.01"
-        value="5"
-      >
-
-      <button id="botonCalcular">
-        Calcular nota necesaria
-      </button>
-
-      <div id="resultado" class="resultado"></div>
-
-    </section>
-
-    <section class="explicacion">
-      <h2>Ejemplo</h2>
 
       <p>
-        Si tienes un 6 en el 60 % de la asignatura y el examen final vale un
-        40 %, necesitarías sacar un 3,50 para terminar con un 5.
+        Hecho para estudiantes.
       </p>
-    </section>
 
-  </main>
+    </div>
 
-  <footer>
-    <p>© 2026 CalculaNotas</p>
   </footer>
 
-  <script src="script.js"></script>
-
 </body>
+</html>
