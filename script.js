@@ -1,8 +1,10 @@
 const botonCalcular = document.getElementById("botonCalcular");
 const resultado = document.getElementById("resultado");
 
-botonCalcular.addEventListener("click", calcularNota);
-
+if (botonCalcular) {
+    botonCalcular.addEventListener("click", calcularNota);s
+}
+s
 function mostrarResultado(mensaje, tipo) {
   resultado.textContent = mensaje;
   resultado.className = `resultado ${tipo}`;
