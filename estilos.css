@@ -1821,3 +1821,43 @@ body > footer:not(.pie) p {
     font-size: 50px;
   }
 }
+/* =================================
+   COLORES CALCULANOTAS
+   Calculadora de Bachillerato
+================================= */
+
+.pagina-calculadora {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(79, 70, 229, 0.14),
+      transparent 35%
+    ),
+    #f5f7ff;
+}
+
+.volver-inicio:hover {
+  color: #4f46e5;
+}
+
+.cabecera-pau > span {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.grupo-campo input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15);
+}
+
+.boton-calcular-pau {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.boton-calcular-pau:hover {
+  background: linear-gradient(135deg, #4338ca, #6d28d9);
+}
+
+.resultado-principal {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
