@@ -8,425 +8,244 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <title>
+    Calculadora de Media de Bachillerato | CalculaNotas
+  </title>
+
   <meta
     name="description"
-    content="Calcula tu nota de acceso y admisión a la universidad con la PAU."
+    content="Calcula gratis tu nota media de Bachillerato introduciendo la media de primero y segundo."
   >
 
-<title>Calculadora de Media de Bachillerato | CalculaNotas</title>
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="favicon.svg"
+  >
 
-  <link rel="stylesheet" href="estilos.css">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="favicon-32x32.png"
+  >
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-  <style>
-    .pagina-calculadora {
-      min-height: 100vh;
-      padding: 120px 20px 70px;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.15), transparent 28%),
-        radial-gradient(circle at 90% 20%, rgba(124, 58, 237, 0.14), transparent 30%),
-        #f8fafc;
-    }
-
-    .contenedor-pau {
-      width: min(1100px, 100%);
-      margin: 0 auto;
-    }
-
-    .volver-inicio {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 24px;
-      color: #2563eb;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .cabecera-pau {
-      text-align: center;
-      margin-bottom: 38px;
-    }
-
-    .cabecera-pau span {
-      display: inline-block;
-      margin-bottom: 12px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.1);
-      color: #2563eb;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .cabecera-pau h1 {
-      margin: 0 0 14px;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.05;
-      color: #0f172a;
-    }
-
-    .cabecera-pau p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: #64748b;
-      font-size: 18px;
-      line-height: 1.7;
-    }
-
-    .rejilla-pau {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: start;
-    }
-
-    .panel-pau {
-      padding: 30px;
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.86);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.09);
-    }
-
-    .panel-pau h2 {
-      margin-top: 0;
-      margin-bottom: 8px;
-      color: #0f172a;
-    }
-
-    .texto-panel {
-      margin-top: 0;
-      margin-bottom: 25px;
-      color: #64748b;
-      line-height: 1.6;
-    }
-
-    .grupo-campo {
-      margin-bottom: 20px;
-    }
-
-    .grupo-campo label {
-      display: block;
-      margin-bottom: 8px;
-      color: #1e293b;
-      font-weight: 700;
-    }
-
-    .grupo-campo input,
-    .grupo-campo select {
-      width: 100%;
-      box-sizing: border-box;
-      padding: 14px 15px;
-      border: 1px solid #cbd5e1;
-      border-radius: 12px;
-      background: #ffffff;
-      color: #0f172a;
-      font-size: 16px;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .grupo-campo input:focus,
-    .grupo-campo select:focus {
-      border-color: #2563eb;
-      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
-    }
-
-    .fila-materia {
-      display: grid;
-      grid-template-columns: 1fr 150px;
-      gap: 14px;
-    }
-
-    .boton-calcular-pau {
-      width: 100%;
-      border: none;
-      border-radius: 14px;
-      padding: 16px 20px;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: #ffffff;
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 14px 30px rgba(37, 99, 235, 0.25);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .boton-calcular-pau:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 36px rgba(37, 99, 235, 0.3);
-    }
-
-    .mensaje-error {
-      display: none;
-      margin-top: 16px;
-      padding: 13px 15px;
-      border-radius: 12px;
-      background: #fef2f2;
-      color: #b91c1c;
-      font-weight: 600;
-      line-height: 1.5;
-    }
-
-    .resultado-principal {
-      padding: 22px;
-      margin-bottom: 18px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, #eff6ff, #f5f3ff);
-    }
-
-    .resultado-principal small {
-      display: block;
-      margin-bottom: 6px;
-      color: #64748b;
-      font-weight: 700;
-    }
-
-    .resultado-principal strong {
-      display: block;
-      color: #0f172a;
-      font-size: 45px;
-      line-height: 1;
-    }
-
-    .resultado-principal span {
-      display: block;
-      margin-top: 8px;
-      color: #64748b;
-    }
-
-    .resultado-secundario {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      padding: 16px 0;
-      border-bottom: 1px solid #e2e8f0;
-    }
-
-    .resultado-secundario:last-of-type {
-      border-bottom: none;
-    }
-
-    .resultado-secundario span {
-      color: #64748b;
-    }
-
-    .resultado-secundario strong {
-      color: #0f172a;
-    }
-
-    .explicacion-formula {
-      margin-top: 24px;
-      padding: 18px;
-      border-radius: 16px;
-      background: #f8fafc;
-      color: #475569;
-      line-height: 1.7;
-    }
-
-    .explicacion-formula strong {
-      color: #0f172a;
-    }
-
-    .aviso-notas {
-      margin-top: 24px;
-      padding: 18px;
-      border: 1px solid #fde68a;
-      border-radius: 16px;
-      background: #fffbeb;
-      color: #854d0e;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 850px) {
-      .rejilla-pau {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .pagina-calculadora {
-        padding-top: 90px;
-      }
-
-      .panel-pau {
-        padding: 22px;
-      }
-
-      .fila-materia {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link
+    rel="stylesheet"
+    href="estilos.css"
+  >
 </head>
 
 <body>
 
   <main class="pagina-calculadora">
+
     <div class="contenedor-pau">
 
-      <a href="index.html" class="volver-inicio">
+      <a
+        href="index.html"
+        class="volver-inicio"
+      >
         ← Volver a CalculaNotas
       </a>
 
       <header class="cabecera-pau">
-        <span>Calculadora de Bachillerato</span>
 
-        <h1>Calculadora de Media de Bachillerato</h1>
+        <span>
+          Calculadora de Bachillerato
+        </span>
 
-      <p>
-Calcula tu nota media de Bachillerato de forma rápida y sencilla introduciendo las calificaciones de tus asignaturas.
-</p>
+        <h1>
+          Calculadora de Media de Bachillerato
+        </h1>
+
+        <p>
+          Introduce la media de primero y segundo para calcular
+          tu nota media final de Bachillerato.
+        </p>
+
       </header>
 
       <div class="rejilla-pau">
 
         <section class="panel-pau">
-         <h2>Introduce las notas de tus asignaturas</h2>
+
+          <h2>
+            Introduce tus notas
+          </h2>
 
           <p class="texto-panel">
-    Introduce la nota final de cada asignatura. Puedes utilizar números con coma o con punto.
-</p>
+            Puedes utilizar números con coma o con punto.
+          </p>
 
           <div class="grupo-campo">
-  <label for="primero">
-    Media de 1º de Bachillerato
-  </label>
 
-  <input
-    type="text"
-    id="primero"
-    inputmode="decimal"
-    placeholder="Por ejemplo: 8,35"
-  >
-</div>
+            <label for="primero">
+              Media de 1.º de Bachillerato
+            </label>
 
-<div class="grupo-campo">
-  <label for="segundo">
-    Media de 2º de Bachillerato
-  </label>
+            <input
+              type="text"
+              id="primero"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 8,25"
+            >
 
-  <input
-    type="text"
-    id="segundo"
-    inputmode="decimal"
-    placeholder="Por ejemplo: 8,90"
-  >
-</div>
+          </div>
+
+          <div class="grupo-campo">
+
+            <label for="segundo">
+              Media de 2.º de Bachillerato
+            </label>
+
+            <input
+              type="text"
+              id="segundo"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 8,75"
+            >
+
+          </div>
+
+          <button
+            type="button"
+            class="boton-calcular-pau"
+            id="calcularMedia"
           >
-           Calcular media
+            Calcular media
           </button>
 
-          <div class="mensaje-error" id="mensajeError"></div>
+          <div
+            class="mensaje-error"
+            id="mensajeError"
+            role="alert"
+          ></div>
+
         </section>
 
         <aside class="panel-pau">
-          <h2>Tu resultado</h2>
+
+          <h2>
+            Tu resultado
+          </h2>
 
           <p class="texto-panel">
-            Aquí aparecerá tu nota calculada.
+            Aquí aparecerá tu media final de Bachillerato.
           </p>
 
           <div class="resultado-principal">
-            <small>Nota de admisión</small>
 
-            <strong id="resultadoAdmision">—</strong>
+            <span>
+              Media de Bachillerato
+            </span>
 
-            <span>Sobre 14 puntos</span>
+            <strong id="resultadoMedia">
+              —
+            </strong>
+
+            <small>
+              Sobre 10 puntos
+            </small>
+
           </div>
 
-          <div class="resultado-secundario">
-            <span>Nota de acceso</span>
-            <strong id="resultadoAcceso">— / 10</strong>
+          <div class="caja-formula">
+
+            <strong>
+              Fórmula utilizada
+            </strong>
+
+            <p>
+              Media final = (media de 1.º + media de 2.º) ÷ 2
+            </p>
+
           </div>
 
-          <div class="resultado-secundario">
-            <span>Puntos por materias</span>
-            <strong id="resultadoPonderaciones">—</strong>
-          </div>
-
-          <div class="explicacion-formula">
-            <strong>Fórmula utilizada</strong>
-
-            <br>
-
-            Nota de acceso =
-            60 % de Bachillerato + 40 % de la fase obligatoria.
-
-            <br><br>
-
-            Nota de admisión =
-            nota de acceso + las materias que ponderan.
-          </div>
-
-          <div class="aviso-notas">
-            Las notas de corte de años anteriores sirven como orientación.
-            No garantizan conseguir plaza, ya que cambian según la demanda
-            y el número de plazas.
-          </div>
         </aside>
 
       </div>
+
     </div>
+
   </main>
 
   <script>
-const primero = document.getElementById("primero");
-const segundo = document.getElementById("segundo");
+    const primero = document.getElementById("primero");
+    const segundo = document.getElementById("segundo");
 
-const resultadoAcceso = document.getElementById("resultadoAcceso");
-const resultadoAdmision = document.getElementById("resultadoAdmision");
-const resultadoPonderaciones = document.getElementById("resultadoPonderaciones");
+    const boton = document.getElementById("calcularMedia");
+    const resultado = document.getElementById("resultadoMedia");
+    const mensajeError = document.getElementById("mensajeError");
 
-const mensajeError = document.getElementById("mensajeError");
-const botonCalcularPau = document.getElementById("botonCalcularPau");
+    function convertirNumero(valor) {
+      return Number(valor.trim().replace(",", "."));
+    }
 
-function convertirNumero(valor) {
-  return Number(valor.trim().replace(",", "."));
-}
+    function notaValida(nota) {
+      return Number.isFinite(nota) && nota >= 0 && nota <= 10;
+    }
 
-function mostrarError(texto) {
-  mensajeError.textContent = texto;
-  mensajeError.style.display = "block";
-}
+    function mostrarError(mensaje) {
+      mensajeError.textContent = mensaje;
+      mensajeError.style.display = "block";
+      resultado.textContent = "—";
+    }
 
-function ocultarError() {
-  mensajeError.textContent = "";
-  mensajeError.style.display = "none";
-}
+    function ocultarError() {
+      mensajeError.textContent = "";
+      mensajeError.style.display = "none";
+    }
 
-function notaValida(nota) {
-  return Number.isFinite(nota) && nota >= 0 && nota <= 10;
-}
+    function calcularMedia() {
+      ocultarError();
 
-function calcularMediaBachillerato() {
-  ocultarError();
+      if (
+        primero.value.trim() === "" ||
+        segundo.value.trim() === ""
+      ) {
+        mostrarError("Introduce las dos notas.");
+        return;
+      }
 
-  const notaPrimero = convertirNumero(primero.value);
-  const notaSegundo = convertirNumero(segundo.value);
+      const notaPrimero = convertirNumero(primero.value);
+      const notaSegundo = convertirNumero(segundo.value);
 
-  if (!notaValida(notaPrimero)) {
-    mostrarError("Introduce una nota válida para 1º de Bachillerato.");
-    return;
-  }
+      if (!notaValida(notaPrimero)) {
+        mostrarError(
+          "La media de 1.º debe estar entre 0 y 10."
+        );
+        return;
+      }
 
-  if (!notaValida(notaSegundo)) {
-    mostrarError("Introduce una nota válida para 2º de Bachillerato.");
-    return;
-  }
+      if (!notaValida(notaSegundo)) {
+        mostrarError(
+          "La media de 2.º debe estar entre 0 y 10."
+        );
+        return;
+      }
 
-  const media = (notaPrimero + notaSegundo) / 2;
+      const media =
+        (notaPrimero + notaSegundo) / 2;
 
-  resultadoAcceso.textContent = media.toFixed(2).replace(".", ",");
-  resultadoAdmision.textContent = media.toFixed(2).replace(".", ",");
-  resultadoPonderaciones.textContent = "Media final";
-}
+      resultado.textContent =
+        media.toFixed(2).replace(".", ",");
+    }
 
-botonCalcularPau.addEventListener("click", calcularMediaBachillerato);
-</script>
+    boton.addEventListener("click", calcularMedia);
+
+    primero.addEventListener("keydown", (evento) => {
+      if (evento.key === "Enter") {
+        calcularMedia();
+      }
+    });
+
+    segundo.addEventListener("keydown", (evento) => {
+      if (evento.key === "Enter") {
+        calcularMedia();
+      }
+    });
+  </script>
+
+</body>
+</html>
