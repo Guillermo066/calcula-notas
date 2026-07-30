@@ -1861,3 +1861,142 @@ body > footer:not(.pie) p {
 .resultado-principal {
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
 }
+/* CABECERA DE LAS CALCULADORAS */
+
+.barra-superior {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid #e8eaf2;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+}
+
+.barra-contenido {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 84px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #10172a;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.marca img {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+}
+
+.menu-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+
+.menu-principal a {
+  color: #3e465a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.menu-principal a:hover {
+  color: #4f46e5;
+}
+
+.boton-empezar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 25px;
+  color: white;
+  background: #11182d;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+  background: #11182d;
+  color: white;
+  padding: 48px 20px 30px;
+}
+
+.pie-contenido {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+}
+
+.pie-marca strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.pie-marca p {
+  margin: 0;
+  color: #b9c0d1;
+}
+
+.pie-enlaces {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin: 30px 0;
+}
+
+.pie-enlaces a {
+  color: #dce1ec;
+  text-decoration: none;
+}
+
+.pie-enlaces a:hover {
+  color: white;
+}
+
+.pie-copyright {
+  margin: 0;
+  padding-top: 25px;
+  color: #9da6ba;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+}
+
+@media (max-width: 850px) {
+  .menu-principal {
+    display: none;
+  }
+
+  .barra-contenido {
+    min-height: 74px;
+  }
+
+  .marca {
+    font-size: 19px;
+  }
+
+  .marca img {
+    width: 39px;
+    height: 39px;
+  }
+
+  .boton-empezar {
+    min-height: 42px;
+    padding: 0 18px;
+  }
+}
