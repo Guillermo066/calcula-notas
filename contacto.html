@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contacto | CalculaNotas</title>
+
+  <meta
+    name="description"
+    content="Contacta con CalculaNotas para resolver dudas, comunicar errores o enviar sugerencias."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="favicon-32x32.png"
+  >
+
+  <link rel="stylesheet" href="estilos.css">
+
+  <style>
+    .pagina-contacto {
+      min-height: 70vh;
+      padding: 80px 20px;
+      background: #f7f8fc;
+    }
+
+    .contenedor-contacto {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+
+    .cabecera-contacto {
+      margin-bottom: 35px;
+      text-align: center;
+    }
+
+    .cabecera-contacto span {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 9px 16px;
+      color: #2563eb;
+      background: #eaf1ff;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .cabecera-contacto h1 {
+      margin: 0 0 18px;
+      color: #10172a;
+      font-size: clamp(38px, 6vw, 60px);
+      line-height: 1.08;
+    }
+
+    .cabecera-contacto p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #697287;
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .tarjeta-contacto {
+      padding: 50px;
+      background: #ffffff;
+      border: 1px solid #e4e7ef;
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(16, 23, 42, 0.08);
+    }
+
+    .tarjeta-contacto h2 {
+      margin: 0 0 14px;
+      color: #10172a;
+      font-size: 28px;
+    }
+
+    .tarjeta-contacto p {
+      color: #555f73;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .caja-correo {
+      margin: 30px 0;
+      padding: 24px;
+      background: #f4f7ff;
+      border: 1px solid #dce6ff;
+      border-radius: 18px;
+    }
+
+    .caja-correo strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #10172a;
+      font-size: 17px;
+    }
+
+    .caja-correo a {
+      color: #2563eb;
+      font-size: 19px;
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .lista-contacto {
+      margin-top: 28px;
+      padding-left: 22px;
+    }
+
+    .lista-contacto li {
+      margin-bottom: 10px;
+      color: #555f73;
+      line-height: 1.7;
+    }
+
+    .boton-correo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+      padding: 15px 24px;
+      color: #ffffff;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .boton-correo:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(37, 99, 235, 0.2);
+    }
+
+    .nota-contacto {
+      margin-top: 34px;
+      padding: 20px;
+      background: #fff8e7;
+      border: 1px solid #f1dda0;
+      border-radius: 15px;
+      color: #655117;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 650px) {
+      .pagina-contacto {
+        padding: 40px 16px;
+      }
+
+      .tarjeta-contacto {
+        padding: 30px 22px;
+        border-radius: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="barra-superior">
+    <div class="barra-contenido">
+
+      <a href="index.html" class="marca">
+        <img src="logo.svg" alt="Logo de CalculaNotas">
+        <span>CalculaNotas</span>
+      </a>
+
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+
+        <a href="index.html#calculadoras">
+          Calculadoras
+        </a>
+
+        <a href="index.html#ventajas">
+          Ventajas
+        </a>
+
+        <a href="index.html#preguntas">
+          Preguntas frecuentes
+        </a>
+      </nav>
+
+      <a
+        href="index.html#calculadoras"
+        class="boton-empezar"
+      >
+        Empezar
+      </a>
+
+    </div>
+  </header>
+
+  <main class="pagina-contacto">
+
+    <div class="contenedor-contacto">
+
+      <header class="cabecera-contacto">
+
+        <span>Estamos para ayudarte</span>
+
+        <h1>Contacto</h1>
+
+        <p>
+          Puedes escribirnos para comunicar errores,
+          resolver dudas o proponer nuevas calculadoras
+          para CalculaNotas.
+        </p>
+
+      </header>
+
+      <section class="tarjeta-contacto">
+
+        <h2>Contacta por correo electrónico</h2>
+
+        <p>
+          El responsable de CalculaNotas es Guillermo Martin Larrad.
+          Puedes enviar un correo electrónico utilizando la dirección
+          que aparece a continuación.
+        </p>
+
+        <div class="caja-correo">
+
+          <strong>Correo de contacto</strong>
+
+          <a href="mailto:guillex066@gmail.com">
+            guillex066@gmail.com
+          </a>
+
+        </div>
+
+        <p>
+          Puedes contactar para:
+        </p>
+
+        <ul class="lista-contacto">
+          <li>
+            Avisar de un error en una calculadora.
+          </li>
+
+          <li>
+            Enviar una sugerencia para mejorar la página.
+          </li>
+
+          <li>
+            Proponer una nueva herramienta o calculadora.
+          </li>
+
+          <li>
+            Consultar cuestiones relacionadas con privacidad,
+            publicidad o el funcionamiento de la web.
+          </li>
+        </ul>
+
+        <a
+          href="mailto:guillex066@gmail.com?subject=Consulta%20sobre%20CalculaNotas"
+          class="boton-correo"
+        >
+          Enviar un correo
+        </a>
+
+        <div class="nota-contacto">
+          No envíes contraseñas, documentos de identidad,
+          datos bancarios ni otra información especialmente sensible.
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="pie-contenido">
+
+      <div class="pie-marca">
+        <strong>CalculaNotas</strong>
+        <p>Calculadoras gratuitas para estudiantes.</p>
+      </div>
+
+      <div class="pie-enlaces">
+        <a href="index.html">
+          Inicio
+        </a>
+
+        <a href="index.html#calculadoras">
+          Calculadoras
+        </a>
+
+        <a href="aviso-legal.html">
+          Aviso legal
+        </a>
+
+        <a href="politica-privacidad.html">
+          Política de privacidad
+        </a>
+
+        <a href="contacto.html">
+          Contacto
+        </a>
+      </div>
+
+      <p class="pie-copyright">
+        © 2026 CalculaNotas. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
