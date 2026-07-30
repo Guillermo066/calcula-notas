@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Calculadora de Recuperaciones | CalculaNotas</title>
+
+  <meta
+    name="description"
+    content="Calcula qué nota necesitas sacar en una recuperación para aprobar una asignatura."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header class="barra-superior">
+    <div class="barra-contenido">
+
+      <a href="index.html" class="marca">
+        <img src="logo.svg" alt="Logo de CalculaNotas">
+        <span>CalculaNotas</span>
+      </a>
+
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="index.html#ventajas">Ventajas</a>
+        <a href="index.html#preguntas">Preguntas frecuentes</a>
+      </nav>
+
+      <a href="#calculadora" class="boton-empezar">
+        Empezar
+      </a>
+
+    </div>
+  </header>
+
+  <main class="pagina-calculadora" id="calculadora">
+
+    <div class="contenedor-pau">
+
+      <header class="cabecera-pau">
+
+        <span>Calculadora de recuperación</span>
+
+        <h1>Calculadora de Recuperaciones</h1>
+
+        <p>
+          Descubre qué nota necesitas sacar en la recuperación
+          para conseguir la nota final que deseas.
+        </p>
+
+      </header>
+
+      <div class="rejilla-pau">
+
+        <section class="panel-pau">
+
+          <h2>Introduce tus datos</h2>
+
+          <p class="texto-panel">
+            Puedes utilizar números con coma o con punto.
+          </p>
+
+          <div class="grupo-campo">
+            <label for="notaActual">
+              Nota actual de la asignatura
+            </label>
+
+            <input
+              type="text"
+              id="notaActual"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 4,20"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="pesoRecuperacion">
+              Porcentaje que vale la recuperación
+            </label>
+
+            <input
+              type="text"
+              id="pesoRecuperacion"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 40"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="notaObjetivo">
+              Nota final que quieres conseguir
+            </label>
+
+            <input
+              type="text"
+              id="notaObjetivo"
+              inputmode="decimal"
+              value="5"
+              placeholder="Por ejemplo: 5"
+            >
+          </div>
+
+          <button
+            type="button"
+            class="boton-calcular-pau"
+            id="calcularRecuperacion"
+          >
+            Calcular nota necesaria
+          </button>
+
+          <p
+            id="mensajeError"
+            class="mensaje-error"
+            style="display: none;"
+          ></p>
+
+        </section>
+
+        <section class="panel-pau">
+
+          <h2>Tu resultado</h2>
+
+          <p class="texto-panel">
+            Aquí aparecerá la nota que necesitas sacar.
+          </p>
+
+          <div class="resultado-principal">
+
+            <span>Nota necesaria</span>
+
+            <strong id="resultadoRecuperacion">—</strong>
+
+            <small>Sobre 10 puntos</small>
+
+          </div>
+
+          <div class="caja-formula">
+
+            <strong>Fórmula utilizada</strong>
+
+            <p>
+              Nota final = nota actual × porcentaje ya evaluado
+              + nota de recuperación × porcentaje de recuperación.
+            </p>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="pie-contenido">
+
+      <div class="pie-marca">
+        <strong>CalculaNotas</strong>
+        <p>Calculadoras gratuitas para estudiantes.</p>
+      </div>
+
+      <div class="pie-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+
+      <p class="pie-copyright">
+        © 2026 CalculaNotas. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    const notaActual = document.getElementById("notaActual");
+    const pesoRecuperacion = document.getElementById("pesoRecuperacion");
+    const notaObjetivo = document.getElementById("notaObjetivo");
+    const boton = document.getElementById("calcularRecuperacion");
+    const resultado = document.getElementById("resultadoRecuperacion");
+    const mensajeError = document.getElementById("mensajeError");
+
+    function convertirNumero(valor) {
+      return Number(valor.trim().replace(",", "."));
+    }
+
+    function mostrarError(mensaje) {
+      mensajeError.textContent = mensaje;
+      mensajeError.style.display = "block";
+      resultado.textContent = "—";
+    }
+
+    function ocultarError() {
+      mensajeError.textContent = "";
+      mensajeError.style.display = "none";
+    }
+
+    function calcular() {
+      ocultarError();
+
+      const actual = convertirNumero(notaActual.value);
+      const peso = convertirNumero(pesoRecuperacion.value);
+      const objetivo = convertirNumero(notaObjetivo.value);
+
+      if (
+        notaActual.value.trim() === "" ||
+        pesoRecuperacion.value.trim() === "" ||
+        notaObjetivo.value.trim() === ""
+      ) {
+        mostrarError("Introduce todos los datos.");
+        return;
+      }
+
+      if (!Number.isFinite(actual) || actual < 0 || actual > 10) {
+        mostrarError("La nota actual debe estar entre 0 y 10.");
+        return;
+      }
+
+      if (!Number.isFinite(peso) || peso <= 0 || peso > 100) {
+        mostrarError("El porcentaje debe estar entre 1 y 100.");
+        return;
+      }
+
+      if (!Number.isFinite(objetivo) || objetivo < 0 || objetivo > 10) {
+        mostrarError("La nota objetivo debe estar entre 0 y 10.");
+        return;
+      }
+
+      const porcentajeRecuperacion = peso / 100;
+      const porcentajeAnterior = 1 - porcentajeRecuperacion;
+
+      const necesaria =
+        (objetivo - actual * porcentajeAnterior) /
+        porcentajeRecuperacion;
+
+      if (necesaria <= 0) {
+        resultado.textContent = "0,00";
+        return;
+      }
+
+      if (necesaria > 10) {
+        resultado.textContent = "Más de 10";
+        mostrarError(
+          "No es posible alcanzar esa nota final con los datos introducidos."
+        );
+        return;
+      }
+
+      resultado.textContent = necesaria.toFixed(2).replace(".", ",");
+    }
+
+    boton.addEventListener("click", calcular);
+
+    [notaActual, pesoRecuperacion, notaObjetivo].forEach((campo) => {
+      campo.addEventListener("keydown", (evento) => {
+        if (evento.key === "Enter") {
+          calcular();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

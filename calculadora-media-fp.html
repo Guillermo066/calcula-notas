@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Calculadora de Media de FP | CalculaNotas</title>
+
+  <meta
+    name="description"
+    content="Calcula gratis la nota media de tu ciclo formativo de Grado Medio o Grado Superior."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header class="barra-superior">
+    <div class="barra-contenido">
+
+      <a href="index.html" class="marca">
+        <img src="logo.svg" alt="Logo de CalculaNotas">
+        <span>CalculaNotas</span>
+      </a>
+
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="index.html#ventajas">Ventajas</a>
+        <a href="index.html#preguntas">Preguntas frecuentes</a>
+      </nav>
+
+      <a href="#calculadora" class="boton-empezar">
+        Empezar
+      </a>
+
+    </div>
+  </header>
+
+  <main class="pagina-calculadora" id="calculadora">
+
+    <div class="contenedor-pau">
+
+      <header class="cabecera-pau">
+
+        <span>Calculadora de Formación Profesional</span>
+
+        <h1>Calculadora de Media de FP</h1>
+
+        <p>
+          Introduce las notas de tus módulos para calcular
+          la media de tu ciclo formativo.
+        </p>
+
+      </header>
+
+      <div class="rejilla-pau">
+
+        <section class="panel-pau">
+
+          <h2>Introduce tus notas</h2>
+
+          <p class="texto-panel">
+            Puedes dejar vacíos los módulos que todavía no tengan nota.
+          </p>
+
+          <div class="grupo-campo">
+            <label for="modulo1">Módulo 1</label>
+            <input
+              type="text"
+              id="modulo1"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 7,50"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo2">Módulo 2</label>
+            <input
+              type="text"
+              id="modulo2"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 8"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo3">Módulo 3</label>
+            <input
+              type="text"
+              id="modulo3"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 6,75"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo4">Módulo 4</label>
+            <input
+              type="text"
+              id="modulo4"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 9"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo5">Módulo 5</label>
+            <input
+              type="text"
+              id="modulo5"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 7"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo6">Módulo 6</label>
+            <input
+              type="text"
+              id="modulo6"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 8,25"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo7">Módulo 7</label>
+            <input
+              type="text"
+              id="modulo7"
+              inputmode="decimal"
+              placeholder="Opcional"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo8">Módulo 8</label>
+            <input
+              type="text"
+              id="modulo8"
+              inputmode="decimal"
+              placeholder="Opcional"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo9">Módulo 9</label>
+            <input
+              type="text"
+              id="modulo9"
+              inputmode="decimal"
+              placeholder="Opcional"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="modulo10">Módulo 10</label>
+            <input
+              type="text"
+              id="modulo10"
+              inputmode="decimal"
+              placeholder="Opcional"
+            >
+          </div>
+
+          <button
+            type="button"
+            class="boton-calcular-pau"
+            id="calcularMediaFP"
+          >
+            Calcular media de FP
+          </button>
+
+          <p
+            id="mensajeError"
+            class="mensaje-error"
+            style="display: none;"
+          ></p>
+
+        </section>
+
+        <section class="panel-pau">
+
+          <h2>Tu resultado</h2>
+
+          <p class="texto-panel">
+            Aquí aparecerá la media de los módulos introducidos.
+          </p>
+
+          <div class="resultado-principal">
+
+            <span>Media de FP</span>
+
+            <strong id="resultadoMediaFP">—</strong>
+
+            <small>Sobre 10 puntos</small>
+
+          </div>
+
+          <div class="caja-formula">
+
+            <strong>Fórmula utilizada</strong>
+
+            <p>
+              Media = suma de todas las notas introducidas
+              dividida entre el número de módulos.
+            </p>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="pie-contenido">
+
+      <div class="pie-marca">
+        <strong>CalculaNotas</strong>
+        <p>Calculadoras gratuitas para estudiantes.</p>
+      </div>
+
+      <div class="pie-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+
+      <p class="pie-copyright">
+        © 2026 CalculaNotas. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    const camposModulos = [
+      document.getElementById("modulo1"),
+      document.getElementById("modulo2"),
+      document.getElementById("modulo3"),
+      document.getElementById("modulo4"),
+      document.getElementById("modulo5"),
+      document.getElementById("modulo6"),
+      document.getElementById("modulo7"),
+      document.getElementById("modulo8"),
+      document.getElementById("modulo9"),
+      document.getElementById("modulo10")
+    ];
+
+    const boton = document.getElementById("calcularMediaFP");
+    const resultado = document.getElementById("resultadoMediaFP");
+    const mensajeError = document.getElementById("mensajeError");
+
+    function convertirNumero(valor) {
+      return Number(valor.trim().replace(",", "."));
+    }
+
+    function mostrarError(mensaje) {
+      mensajeError.textContent = mensaje;
+      mensajeError.style.display = "block";
+      resultado.textContent = "—";
+    }
+
+    function ocultarError() {
+      mensajeError.textContent = "";
+      mensajeError.style.display = "none";
+    }
+
+    function calcularMediaFP() {
+      ocultarError();
+
+      const notas = [];
+
+      for (const campo of camposModulos) {
+        const valor = campo.value.trim();
+
+        if (valor === "") {
+          continue;
+        }
+
+        const nota = convertirNumero(valor);
+
+        if (!Number.isFinite(nota) || nota < 0 || nota > 10) {
+          mostrarError(
+            "Todas las notas introducidas deben estar entre 0 y 10."
+          );
+          return;
+        }
+
+        notas.push(nota);
+      }
+
+      if (notas.length === 0) {
+        mostrarError("Introduce al menos una nota.");
+        return;
+      }
+
+      const suma = notas.reduce((total, nota) => total + nota, 0);
+      const media = suma / notas.length;
+
+      resultado.textContent = media.toFixed(2).replace(".", ",");
+    }
+
+    boton.addEventListener("click", calcularMediaFP);
+
+    camposModulos.forEach((campo) => {
+      campo.addEventListener("keydown", (evento) => {
+        if (evento.key === "Enter") {
+          calcularMediaFP();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

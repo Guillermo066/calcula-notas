@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Calculadora de Nota de Corte | CalculaNotas</title>
+
+  <meta
+    name="description"
+    content="Compara tu nota de admisión con la nota de corte de una carrera y descubre cuánto te sobra o cuánto te falta."
+  >
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="favicon-32x32.png"
+  >
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header class="barra-superior">
+    <div class="barra-contenido">
+
+      <a href="index.html" class="marca">
+        <img src="logo.svg" alt="Logo de CalculaNotas">
+        <span>CalculaNotas</span>
+      </a>
+
+      <nav class="menu-principal">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="index.html#ventajas">Ventajas</a>
+        <a href="index.html#preguntas">Preguntas frecuentes</a>
+      </nav>
+
+      <a href="#calculadora" class="boton-empezar">
+        Empezar
+      </a>
+
+    </div>
+  </header>
+
+  <main class="pagina-calculadora" id="calculadora">
+
+    <div class="contenedor-pau">
+
+      <header class="cabecera-pau">
+
+        <span>Calculadora universitaria</span>
+
+        <h1>Calculadora de Nota de Corte</h1>
+
+        <p>
+          Compara tu nota de admisión con la nota de corte
+          de la carrera que quieres estudiar.
+        </p>
+
+      </header>
+
+      <div class="rejilla-pau">
+
+        <section class="panel-pau">
+
+          <h2>Introduce las notas</h2>
+
+          <p class="texto-panel">
+            Puedes utilizar números con coma o con punto.
+          </p>
+
+          <div class="grupo-campo">
+            <label for="notaAdmision">
+              Tu nota de admisión
+            </label>
+
+            <input
+              type="text"
+              id="notaAdmision"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 11,85"
+            >
+          </div>
+
+          <div class="grupo-campo">
+            <label for="notaCorte">
+              Nota de corte de la carrera
+            </label>
+
+            <input
+              type="text"
+              id="notaCorte"
+              inputmode="decimal"
+              placeholder="Por ejemplo: 12,40"
+            >
+          </div>
+
+          <button
+            type="button"
+            class="boton-calcular-pau"
+            id="compararNotas"
+          >
+            Comparar mis notas
+          </button>
+
+          <p
+            id="mensajeError"
+            class="mensaje-error"
+            style="display: none;"
+          ></p>
+
+        </section>
+
+        <section class="panel-pau">
+
+          <h2>Tu resultado</h2>
+
+          <p class="texto-panel">
+            Aquí aparecerá la diferencia entre ambas notas.
+          </p>
+
+          <div class="resultado-principal">
+
+            <span id="tituloResultado">
+              Diferencia
+            </span>
+
+            <strong id="resultadoDiferencia">—</strong>
+
+            <small id="textoResultado">
+              Sobre 14 puntos
+            </small>
+
+          </div>
+
+          <div class="caja-formula">
+
+            <strong>Importante</strong>
+
+            <p id="explicacionResultado">
+              Las notas de corte cambian cada curso y no garantizan
+              la admisión. Utiliza siempre la información oficial
+              publicada por cada universidad.
+            </p>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="pie-contenido">
+
+      <div class="pie-marca">
+        <strong>CalculaNotas</strong>
+        <p>Calculadoras gratuitas para estudiantes.</p>
+      </div>
+
+      <div class="pie-enlaces">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#calculadoras">Calculadoras</a>
+        <a href="#">Aviso legal</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+
+      <p class="pie-copyright">
+        © 2026 CalculaNotas. Todos los derechos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    const notaAdmision =
+      document.getElementById("notaAdmision");
+
+    const notaCorte =
+      document.getElementById("notaCorte");
+
+    const boton =
+      document.getElementById("compararNotas");
+
+    const resultado =
+      document.getElementById("resultadoDiferencia");
+
+    const tituloResultado =
+      document.getElementById("tituloResultado");
+
+    const textoResultado =
+      document.getElementById("textoResultado");
+
+    const explicacionResultado =
+      document.getElementById("explicacionResultado");
+
+    const mensajeError =
+      document.getElementById("mensajeError");
+
+    function convertirNumero(valor) {
+      return Number(
+        valor.trim().replace(",", ".")
+      );
+    }
+
+    function mostrarError(mensaje) {
+      mensajeError.textContent = mensaje;
+      mensajeError.style.display = "block";
+
+      resultado.textContent = "—";
+      tituloResultado.textContent = "Diferencia";
+      textoResultado.textContent = "Sobre 14 puntos";
+    }
+
+    function ocultarError() {
+      mensajeError.textContent = "";
+      mensajeError.style.display = "none";
+    }
+
+    function comparar() {
+      ocultarError();
+
+      if (
+        notaAdmision.value.trim() === "" ||
+        notaCorte.value.trim() === ""
+      ) {
+        mostrarError("Introduce las dos notas.");
+        return;
+      }
+
+      const admision =
+        convertirNumero(notaAdmision.value);
+
+      const corte =
+        convertirNumero(notaCorte.value);
+
+      if (
+        !Number.isFinite(admision) ||
+        admision < 0 ||
+        admision > 14
+      ) {
+        mostrarError(
+          "Tu nota de admisión debe estar entre 0 y 14."
+        );
+        return;
+      }
+
+      if (
+        !Number.isFinite(corte) ||
+        corte < 0 ||
+        corte > 14
+      ) {
+        mostrarError(
+          "La nota de corte debe estar entre 0 y 14."
+        );
+        return;
+      }
+
+      const diferencia = admision - corte;
+      const diferenciaAbsoluta = Math.abs(diferencia);
+
+      resultado.textContent =
+        diferenciaAbsoluta
+          .toFixed(2)
+          .replace(".", ",");
+
+      if (diferencia > 0) {
+        tituloResultado.textContent =
+          "Superas la nota de corte";
+
+        textoResultado.textContent =
+          "Puntos por encima";
+
+        explicacionResultado.textContent =
+          "Tu nota está por encima de la nota de corte introducida. Aun así, la admisión no está garantizada porque la nota de corte cambia según la demanda y las plazas disponibles.";
+      } else if (diferencia < 0) {
+        tituloResultado.textContent =
+          "Te faltan puntos";
+
+        textoResultado.textContent =
+          "Para alcanzar la nota de corte";
+
+        explicacionResultado.textContent =
+          "Tu nota está por debajo de la nota de corte introducida. Puedes revisar otras universidades, carreras similares o las notas de cursos anteriores.";
+      } else {
+        tituloResultado.textContent =
+          "Igualas la nota de corte";
+
+        resultado.textContent = "0,00";
+
+        textoResultado.textContent =
+          "Diferencia";
+
+        explicacionResultado.textContent =
+          "Tu nota coincide con la nota de corte introducida. Esto no garantiza plaza, ya que puede haber empates y variaciones durante el proceso de admisión.";
+      }
+    }
+
+    boton.addEventListener("click", comparar);
+
+    [notaAdmision, notaCorte].forEach((campo) => {
+      campo.addEventListener("keydown", (evento) => {
+        if (evento.key === "Enter") {
+          comparar();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
