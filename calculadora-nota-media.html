@@ -15,20 +15,32 @@
 </head>
 
 <body>
+<body>
 
-<header>
-    <div class="contenedor">
-        <nav class="menu">
-    <a href="index.html">Calculadora nota necesaria</a>
-    <a href="calculadora-nota-media.html">Calculadora nota media</a>
-    <a href="calculadora-media-ponderada.html">Calculadora media ponderada</a>
-</nav>
-        <h1>Calculadora de nota media</h1>
-        <p>Calcula la media de todas tus notas en segundos.</p>
-    </div>
+<header class="barra-superior">
+  <div class="barra-contenido">
+
+    <a href="index.html" class="marca">
+      <img src="logo.svg" alt="Logo de CalculaNotas">
+      <span>CalculaNotas</span>
+    </a>
+
+    <nav class="menu-principal">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#calculadoras">Calculadoras</a>
+      <a href="index.html#ventajas">Ventajas</a>
+      <a href="index.html#preguntas">Preguntas frecuentes</a>
+    </nav>
+
+    <a href="#calculadora" class="boton-empezar">
+      Empezar
+    </a>
+
+  </div>
 </header>
 
-<main class="contenedor">
+
+<main class="contenedor" id="calculadora">
 
     <div class="calculadora">
 
@@ -90,6 +102,26 @@
             "Tu nota media es: " + media.toFixed(2);
     });
 </script>
+<footer class="pie-pagina">
+  <div class="pie-contenido">
 
+    <div class="pie-marca">
+      <strong>CalculaNotas</strong>
+      <p>Calculadoras gratuitas para estudiantes.</p>
+    </div>
+
+    <div class="pie-enlaces">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#calculadoras">Calculadoras</a>
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+
+    <p class="pie-copyright">
+      © 2026 CalculaNotas. Todos los derechos reservados.
+    </p>
+
+  </div>
+</footer>
 </body>
 </html>
