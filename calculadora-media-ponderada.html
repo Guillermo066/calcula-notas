@@ -8,20 +8,29 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+<header class="barra-superior">
+  <div class="barra-contenido">
 
-<header>
-    <div class="contenedor">
-        <nav class="menu">
-    <a href="index.html">Calculadora nota necesaria</a>
-    <a href="calculadora-nota-media.html">Calculadora nota media</a>
-    <a href="calculadora-media-ponderada.html">Calculadora media ponderada</a>
-</nav>
-        <h1>Calculadora de media ponderada</h1>
-        <p>Calcula tu nota teniendo en cuenta el porcentaje de cada examen.</p>
-    </div>
+    <a href="index.html" class="marca">
+      <img src="logo.svg" alt="Logo de CalculaNotas">
+      <span>CalculaNotas</span>
+    </a>
+
+    <nav class="menu-principal">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#calculadoras">Calculadoras</a>
+      <a href="index.html#ventajas">Ventajas</a>
+      <a href="index.html#preguntas">Preguntas frecuentes</a>
+    </nav>
+
+    <a href="#calculadora" class="boton-empezar">
+      Empezar
+    </a>
+
+  </div>
 </header>
 
-<main class="contenedor">
+<main class="contenedor" id="calculadora"></main>
 
     <div class="calculadora">
 
@@ -79,6 +88,26 @@ document.getElementById("resultadoPonderada").textContent="Tu media ponderada es
 
 });
 </script>
+<footer class="pie-pagina">
+  <div class="pie-contenido">
 
+    <div class="pie-marca">
+      <strong>CalculaNotas</strong>
+      <p>Calculadoras gratuitas para estudiantes.</p>
+    </div>
+
+    <div class="pie-enlaces">
+      <a href="index.html">Inicio</a>
+      <a href="index.html#calculadoras">Calculadoras</a>
+      <a href="#">Aviso legal</a>
+      <a href="#">Política de privacidad</a>
+    </div>
+
+    <p class="pie-copyright">
+      © 2026 CalculaNotas. Todos los derechos reservados.
+    </p>
+
+  </div>
+</footer>
 </body>
 </html>
