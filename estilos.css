@@ -2000,3 +2000,26 @@ body > footer:not(.pie) p {
     padding: 0 18px;
   }
 }
+/* CORREGIR CABECERA DE LAS CALCULADORAS */
+
+header.barra-superior {
+  background: rgba(255, 255, 255, 0.96);
+  color: #10172a;
+  padding: 0;
+  text-align: left;
+  border-bottom: 1px solid #e8eaf2;
+}
+
+header.barra-superior .marca,
+header.barra-superior .menu-principal a {
+  color: #10172a;
+}
+
+header.barra-superior .menu-principal a:hover {
+  color: #4f46e5;
+}
+
+header.barra-superior .boton-empezar {
+  color: #ffffff;
+  background: #11182d;
+}
