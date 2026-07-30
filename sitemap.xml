@@ -85,5 +85,10 @@
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
-
+<url>
+  <loc>https://calcula-notas-nine.vercel.app/politica-cookies.html</loc>
+  <lastmod>2026-07-30</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.3</priority>
+</url>
 </urlset>
