@@ -2023,3 +2023,27 @@ header.barra-superior .boton-empezar {
   color: #ffffff;
   background: #11182d;
 }
+/* FORZAR CABECERA BLANCA EN TODAS LAS CALCULADORAS */
+
+body header.barra-superior {
+  background: #ffffff !important;
+  background-image: none !important;
+  color: #10172a !important;
+  padding: 0 !important;
+  text-align: left !important;
+  border-bottom: 1px solid #e8eaf2 !important;
+}
+
+body header.barra-superior .barra-contenido {
+  min-height: 84px;
+}
+
+body header.barra-superior .marca,
+body header.barra-superior .menu-principal a {
+  color: #10172a !important;
+}
+
+body header.barra-superior .boton-empezar {
+  background: #11182d !important;
+  color: #ffffff !important;
+}
